@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="css\style1.css">
+    <title>Smart street lighting system</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#components">Components</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#circuit">Circuit</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#working-1">Working</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#code">Code</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="header-sec">
+        <h1 class="header-title">SMART STREET LIGHTING SYSTEM</h1><br>
+        <h5 class="header-discription">An IoT-based street lightning system which uses nodemcu and blynk notification
+        </h5><br><br>
+      
+
+      <section class="feature-sec">
+        <h3>Introduction</h3>
+        <p>Our mini-project addresses the challenges like unnecessary power consumption and human presence through the implementation of a Smart Street Lighting System using the ESP8266 microcontroller, infrared (IR) sensors, and light-dependent resistor (LDR) sensors. The integration of these technologies aims to create an intelligent, adaptive, and energy-efficient lighting infrastructure for urban environments.</p>
+      </section>
+      </section>
+    
+
+      <section id="components" class="colored-section centered-section">
+         <h2 class="component-header">Components Used</h2>
+        <div id="carouselExampleControls" class="carousel slide " data-bs-ride="false" >
+            <div class="carousel-inner">
+              <div class="carousel-item active ">
+                <div class="row">
+                <div class="in-one-carousel col-md-4">
+                <img class="opinion-img" src="nodemcu.png" alt="" width="100" height="100">
+                <h5>NodeMCU ESP8266</h5>
+               </div>
+               <div class="in-one-carousel col-md-4">
+                <img class="opinion-img" src="ir-sensor.jpeg" alt="" width="100" height="100">
+                <h5>IR-Sensor</h5>
+               </div>
+               <div class="in-one-carousel col-md-4">
+                <img class="opinion-img" src="ldr.jpeg" alt="" width="100" height="100">
+                <h5>LDR-sensor</h5>
+               </div>
+               </div>
+              </div>
+              <div class="carousel-item " >
+                <div class="carousel-item active ">
+                    <div class="row">
+                    <div class="in-one-carousel col-md-6">
+                    <img class="opinion-img" src="white-led.jpeg" alt="" width="100" height="100">
+                    <h5>LED</h5>
+                   </div>
+                   <div class="in-one-carousel col-md-6">
+                    <img class="opinion-img" src="resistor.webp" alt="" width="100" height="100">
+                    <h5>Resistor</h5>
+                   </div>
+                   </div>
+                  </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" ></span>
+              
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" ></span>
+              
+            </button>
+          </div>
+    </section>
+  <section class="bg"><hr>
+<div class="explaination-box">
+    <section class="circuit-diagram" id="circuit">
+        <br><br>
+        <h3 style="margin-bottom: 2.5%;text-align: center;font-size: 35px;">Implementation</h3><br>
+        <div >
+                <img class="circuit"src="Circuit-Diagram-for-IoT-based-Smart-Street-Light.png" alt="" width="50%" >
+        </div>
+        
+        <br><br>
+       <p class="Explaination">
+        <p>STEP 1 : To implement the project the following connections should be made </p>
+        <ul style="line-height: 2;" >
+          <li>OUT from IR sensor 1 to D0 of ESP8266 </li>
+          <li>OUT from IR sensor 2 to D1 of ESP8266</li>
+          <li>OUT from IR sensor 3 to D2 of ESP8266</li>
+          <li>OUT from LDR sensor to A0 of ESP8266</li>
+          <li>GND from IR sensor 1,2,3 and LDR sensor to GND of ESP8266</li>
+          <li>VCC from IR sensor 1,2,3 and LDR sensor to VIN of ESP8266</li>
+          <li>ANODE of LED1 to D5 of ESP8266</li>
+          <li>ANODE of LED2 to D6 of ESP8266</li>
+          <li>ANODE of LED3 to D7 of ESP8266</li>
+          <li>CATHODE of LED 1,2,3 to GND of ESP8266</li>
+          <li>One end of resistor to A0 and the other end to the GND of ESP8266</li>
+
+        </ul>
+
+        <p>STEP 2:</p>
+        <ul style="line-height: 2;">
+            <li>Install Arduino IDE from <a href="https://www.arduino.cc/en/software" target="_blank">https://www.arduino.cc/en/software</a>  </li>
+            <li>Open the IDE and copy the code given in the code section</li>
+            <li>To install ESP8266 board
+                <ul>
+                    <li>Go to File -> Preferences and paste <a href="http://arduino.esp8266.com/stable/package_esp8266com_index.json" target="_blank">http://arduino.esp8266.com/stable/package_esp8266com_index.json</a> in Additional Boards Managers URLs</li>
+                    <li>Once the installation is complete go to Tools -> Board -> ESP8266 Boards -> NodeMCU 1.0
+                        (ESP-12E Module)</li>
+                </ul>
+            </li>
+            
+        </ul>
+
+        <p>STEP 3: </p>
+        <ul style="line-height: 2; ">
+            <li>Connect the ESP8266 to a pc using a USB cable</li>
+            <li>Open the IDE and select the port in Tools</li>
+            <li>Upload the program</li>
+        </ul>
+
+      </p>
+        
+        
+
+    </section>
+
+    <section class="blynk-setup">
+        <h3 style="margin-bottom: 2%;text-align: center;font-size: 35px;">Set up Blynk App for the project</h3><br>
+       
+       <p>Blynk is a popular Internet of Things (IoT) platform that enables users to build and control IoT projects easily. It simplifies the process of creating connected devices by providing a user-friendly interface and a powerful cloud infrastructure. Blynk supports a variety of hardware platforms and communication protocols, making it versatile and widely used in the maker and IoT community</p> 
+       <br>
+       <p>Steps to follow in blynk:</p>
+       <ul>
+        <li>Install the blynk app from https://blynk.io/</li>
+        <li>Create a new project</li>
+        <li>Enter the authentication code sent in the code in IDE</li>
+        <li>Add terminal and select PIN as V10</li>
+        <li>Run the project</li>
+       </ul><br>
+
+       <!-- <div class="row">
+        <div class="col-md-6" >
+            <img class="circuit"src="blynk1.jpeg" alt="" width="50%" height="25%" >
+        </div>
+        <div class="col-md-6" >
+            <img src="/blynk2.jpeg" alt="" class="connection" width="90%"  >
+        </div>
+    </div> -->
+
+    <h2 id="code" style="text-align: center;font-size: 35px;">Source Code</h2><br>
+
+    <a href="https://github.com/mohankrish17/Street-lighting-system-Iot-basedproject.git" target="_blank" style="padding-left: 500px;">https://github.com/mohankrish17/Street-lighting-system-Iot-basedproject.git</a><br><br>
+    <br><br>
+    <div id="working-1">
+        <h2 style="text-align: center;font-size: 35px;">Working</h2><br>
+        <p>The system is designed to dynamically adjust the intensity of streetlights based on real-time environmental conditions, human presence, and ambient light levels. The ESP8266 controls the intensity of the street lights according to the readings of the LDR sensor and IR sensors. LDR sensor recognises whether its day or night and according to it esp8266 sets the street lights in OFF or LOW INTENSITY states. When a vehicle approaches a specific street light the IR sensor senses the movement and the ESP8266 sets that particular street light in HIGH state.</p>
+         <br>
+         <img src="WhatsApp Image 2023-11-27 at 1.27.19 PM.jpeg" alt="" height="40%" width="40%" class="final-pic">
+
+    </div>
+    <br>
+</div>
+<br><hr><br>
+</section>
+<div class="team">
+  <h2 style="text-align: center;">Our Team</h2>
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="text-center">
+        <img src="mohan.jpg" class="opinion-img" alt="..." height="300" width="300" >
+        <h5 style="text-align: center;">MOHAN KRISHNA</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="text-center">
+        <img src="thafseer.jpg" class="opinion-img" alt="..."  height="300" width="300" >
+        <h5 style="text-align: center;">MOHAMMED THAFSEER</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="text-center">
+        <img src="nawaz.jpg" class="opinion-img" alt="..."  height="300" width="300" >
+        <h5 style="text-align: center;">MOHAMMED NAWAZ</h5>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div><br>
+<hr><br>
+
+<div class="guide">
+  <h2 style="text-align: center;">Meet Our Guide</h2><br>
+  <div class="text-center">
+    <img src="jason_sir.jpg" class="opinion-img" alt="..." >
+    <h4 style="text-align: center;">Dr. JASON ELROY MARTIS</h4>
+    <h6 style="text-align: center;"><b>Designation</b>&nbsp;&nbsp;:&nbsp;&nbsp;Associate Professor</h6>
+    <h6 style="text-align: center;"><b>Email</b>&nbsp;&nbsp;:&nbsp;&nbsp;jason1987martis@nitte.edu.in</h6>
+    <h6 style="text-align: center;">NMAM Institute of Technology,Nitte</h6>
+  </div>
+</div>
+
+
+  <footer id="footer"  class=" white-section similar-section centered-section">
+
+    <p class="neglected-para">© smart street lighting system @2023</p>
+
+  </footer>
+</body>
+</html>
